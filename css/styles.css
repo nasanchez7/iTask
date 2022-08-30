@@ -58,6 +58,7 @@ main {
   border-radius: 10px;
   border: none;
   background-color: #17181F;
+  color: #EEEDF0;
 }
 .iTask .newTask button {
   width: 20%;
@@ -66,5 +67,38 @@ main {
   background-color: #6C72CB;
   color: #EEEDF0;
   font-size: 11px;
+  cursor: pointer;
+}
+.iTask .listTask {
+  margin-top: 10px;
+}
+.iTask .listTask h3 {
+  color: #EEEDF0;
+  font-size: 15px;
+  font-weight: 500;
+}
+.iTask .listTask .task {
+  display: flex;
+  background-color: #17181F;
+  width: 100%;
+  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  margin-top: 10px;
+  height: max-content;
+}
+.iTask .listTask .task .infoTask h5 {
+  font-weight: 500;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.308);
+}
+.iTask .listTask .task .infoTask p {
+  color: #EEEDF0;
+  width: 80%;
+}
+.iTask .listTask .task .deleteTask i {
+  color: #6C72CB;
+  font-size: 18px;
   cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */

@@ -65,6 +65,7 @@ main{
             border-radius: 10px;
             border: none;
             background-color: $colorFondo;
+            color: $colorLetras;
         }
         button{
             width: 20%;
@@ -75,6 +76,43 @@ main{
             font-size: 11px;
             cursor: pointer;
         }
-
     }
+    .listTask{
+        margin-top: 10px;
+        h3{
+            color: $colorLetras;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .task{
+            display: flex;
+            background-color: $colorFondo;
+            width: 100%;
+            border-radius: 10px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 15px;
+            margin-top: 10px;
+            height: max-content;
+            .infoTask{
+                h5{
+                    font-weight: 500;
+                    font-size: 13px;
+                    color: rgba(255, 255, 255, 0.308);
+                }
+                p{
+                    color: $colorLetras;
+                    width: 80%;
+                }
+            }
+            .deleteTask{
+                i{
+                    color: $colorPrimario;
+                    font-size: 18px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    
 }
