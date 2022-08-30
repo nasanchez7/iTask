@@ -58,7 +58,6 @@ class Task {
     }
 }
 
-
 const tasks: Task[] = [];
 
 const btnTask: any = document.getElementById("btnTask");
@@ -89,7 +88,7 @@ const newTask = () => {
             <p> ${task.info} </p>
         </div>
         <div class="deleteTask">
-            <i class='bx bxs-trash' id="deleteTask${index}"></i>
+            <i class='bx bxs-trash' onclick="deleteTask(${index})"></i>
         </div>
         `
         listTask.appendChild(newTask);
