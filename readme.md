@@ -1,6 +1,6 @@
 ### ITask (Lista de tareas con TypeScript)
 
-- [iTask](https://nasanchez7.github.io/nike-form-validation/ "iTask") es un simple app de lista de tareas echa con TypeScript.
+- [iTask](https://nasanchez7.github.io/iTask/ "iTask") es un simple app de lista de tareas echa con TypeScript.
 
 ## Funcionalidades
 
