@@ -1,4 +1,4 @@
-//Obtener fecha de hoy
+//Obtener fecha y hora de hoy
 
 const getHour = (): string => {
 
@@ -46,7 +46,7 @@ getMonth();
 getHour();
 
 
-//Logica nueva tarea
+//Estructura tarea
 
 class Task {
     info: string
@@ -58,12 +58,15 @@ class Task {
     }
 }
 
+//Tareas
 const tasks: Task[] = [];
 
 const btnTask: any = document.getElementById("btnTask");
 
-const newTask = () => {
 
+//Agregar tarea nueva
+
+const newTask = () => {
     const date: Date = new Date;
     const hour: number = date.getHours();
     const minutes: number = date.getMinutes();
@@ -93,7 +96,30 @@ const newTask = () => {
         `
         listTask.appendChild(newTask);
     })
+}
 
+const deleteTask = (index: number) => {
+    console.log(index);
+
+    tasks.splice(index, 1);
+
+    const listTask: any = document.getElementById("listTask");
+    listTask.innerHTML = "";
+
+    tasks.forEach((task, index) => {
+        const newTask: any = document.createElement("div");
+        newTask.className = "task";
+        newTask.innerHTML = `
+        <div class="infoTask">
+            <h5> ${task.date} </h5>
+            <p> ${task.info} </p>
+        </div>
+        <div class="deleteTask">
+            <i class='bx bxs-trash' onclick="deleteTask(${index})"></i>
+        </div>
+        `
+        listTask.appendChild(newTask);
+    })
 }
 
 btnTask.addEventListener("click", newTask);

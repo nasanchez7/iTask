@@ -1,5 +1,5 @@
 "use strict";
-//Obtener fecha de hoy
+//Obtener fecha y hora de hoy
 const getHour = () => {
     const date = new Date;
     const hour = date.getHours();
@@ -27,15 +27,17 @@ const getMonth = () => {
 getDay();
 getMonth();
 getHour();
-//Logica nueva tarea
+//Estructura tarea
 class Task {
     constructor(info, date) {
         this.info = info;
         this.date = date;
     }
 }
+//Tareas
 const tasks = [];
 const btnTask = document.getElementById("btnTask");
+//Agregar tarea nueva
 const newTask = () => {
     const date = new Date;
     const hour = date.getHours();
@@ -45,6 +47,26 @@ const newTask = () => {
     const newTask = new Task(infoTask.value, time);
     tasks.push(newTask);
     console.log(tasks);
+    const listTask = document.getElementById("listTask");
+    listTask.innerHTML = "";
+    tasks.forEach((task, index) => {
+        const newTask = document.createElement("div");
+        newTask.className = "task";
+        newTask.innerHTML = `
+        <div class="infoTask">
+            <h5> ${task.date} </h5>
+            <p> ${task.info} </p>
+        </div>
+        <div class="deleteTask">
+            <i class='bx bxs-trash' onclick="deleteTask(${index})"></i>
+        </div>
+        `;
+        listTask.appendChild(newTask);
+    });
+};
+const deleteTask = (index) => {
+    console.log(index);
+    tasks.splice(index, 1);
     const listTask = document.getElementById("listTask");
     listTask.innerHTML = "";
     tasks.forEach((task, index) => {
