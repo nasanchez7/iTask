@@ -58,11 +58,10 @@ class Task {
     }
 }
 
-//Tareas
+//Lista de tareas
 const tasks: Task[] = [];
 
 const btnTask: any = document.getElementById("btnTask");
-
 
 //Agregar tarea nueva
 
@@ -77,7 +76,7 @@ const newTask = () => {
     const newTask: Task = new Task(infoTask.value, time);
     tasks.push(newTask);
 
-    console.log(tasks);
+    //console.log(tasks);
 
     const listTask: any = document.getElementById("listTask");
     listTask.innerHTML = "";
@@ -96,11 +95,12 @@ const newTask = () => {
         `
         listTask.appendChild(newTask);
     })
+
+    infoTask.value = "";
 }
 
 const deleteTask = (index: number) => {
-    console.log(index);
-
+    //console.log(index);
     tasks.splice(index, 1);
 
     const listTask: any = document.getElementById("listTask");
