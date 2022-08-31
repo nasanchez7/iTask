@@ -66,13 +66,11 @@ const btnTask: any = document.getElementById("btnTask");
 //Agregar tarea nueva
 
 const newTask = () => {
-
-
     const date: Date = new Date;
     const hour: number = date.getHours();
     const minutes: number = date.getMinutes();
-
     const time: string = hour + ":" + minutes;
+
     const infoTask: any = document.getElementById("taskContent");
 
     if(infoTask.value === ""){
@@ -82,7 +80,6 @@ const newTask = () => {
 
     const newTask: Task = new Task(infoTask.value, time);
     tasks.push(newTask);
-
     const listTask: any = document.getElementById("listTask");
     listTask.innerHTML = "";
 
@@ -100,17 +97,16 @@ const newTask = () => {
         `
         listTask.appendChild(newTask);
     })
-
     infoTask.value = "";
 }
 
-const deleteTask = (index: number) => {
-    //console.log(index);
-    tasks.splice(index, 1);
 
+//Eliminar tarea
+
+const deleteTask = (index: number) => {
+    tasks.splice(index, 1);
     const listTask: any = document.getElementById("listTask");
     listTask.innerHTML = "";
-
     tasks.forEach((task, index) => {
         const newTask: any = document.createElement("div");
         newTask.className = "task";
