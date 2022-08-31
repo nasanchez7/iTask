@@ -66,6 +66,8 @@ const btnTask: any = document.getElementById("btnTask");
 //Agregar tarea nueva
 
 const newTask = () => {
+
+
     const date: Date = new Date;
     const hour: number = date.getHours();
     const minutes: number = date.getMinutes();
@@ -73,10 +75,13 @@ const newTask = () => {
     const time: string = hour + ":" + minutes;
     const infoTask: any = document.getElementById("taskContent");
 
+    if(infoTask.value === ""){
+        alert("Por favor complete el campo primero antes de agregar una nueva nota.")
+        return;
+    }
+
     const newTask: Task = new Task(infoTask.value, time);
     tasks.push(newTask);
-
-    //console.log(tasks);
 
     const listTask: any = document.getElementById("listTask");
     listTask.innerHTML = "";

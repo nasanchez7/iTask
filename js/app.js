@@ -44,6 +44,10 @@ const newTask = () => {
     const minutes = date.getMinutes();
     const time = hour + ":" + minutes;
     const infoTask = document.getElementById("taskContent");
+    if (infoTask.value === "") {
+        alert("Por favor complete el campo primero antes de agregar una nueva nota.");
+        return;
+    }
     const newTask = new Task(infoTask.value, time);
     tasks.push(newTask);
     //console.log(tasks);
